@@ -6,6 +6,7 @@ on:
       - 'trunk'
     paths:
       - 'services/commons/**'
+      - '!services/commons/gradle.properties'
 jobs:
   build:
     runs-on: ubuntu-latest
