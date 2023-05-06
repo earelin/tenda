@@ -23,3 +23,6 @@ jobs:
       uses: gradle/gradle-build-action@v2
     - name: Run publish with Gradle Wrapper
       run: ./gradlew publish
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_ACTOR: earelin
