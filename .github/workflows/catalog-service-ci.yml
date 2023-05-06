@@ -9,6 +9,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./services/catalog-service
     steps:
     - name: Checkout project sources
       uses: actions/checkout@v3
