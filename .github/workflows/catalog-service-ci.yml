@@ -5,7 +5,7 @@ on:
     branches:
       - 'trunk'
     paths:
-      - 'services/catalog-service'
+      - 'services/catalog-service/**'
 jobs:
   build:
     runs-on: ubuntu-latest
