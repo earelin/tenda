@@ -17,6 +17,9 @@ dependencies {
 }
 
 publishing {
+    create<MavenPublication>("mavenJava") {
+        from(components["java"])
+    }
     repositories {
         maven {
             name = "GitHubPackages"
