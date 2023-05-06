@@ -5,6 +5,14 @@ updates:
      schedule:
        interval: "weekly"
    - package-ecosystem: "gradle"
-     directory: "/services-catalog-service"
+     directory: "/services/catalog-service"
+     schedule:
+       interval: "weekly"
+   - package-ecosystem: "gradle"
+     directory: "/services/customer-service"
+     schedule:
+       interval: "weekly"
+   - package-ecosystem: "gradle"
+     directory: "/services/commons"
      schedule:
        interval: "weekly"
