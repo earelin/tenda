@@ -1,11 +1,11 @@
-package org.earelin.tenda.commons;
+package org.earelin.tenda.catalog.domain;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 class StringI18nTest {
 

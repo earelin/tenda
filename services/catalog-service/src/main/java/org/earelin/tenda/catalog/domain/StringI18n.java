@@ -1,4 +1,4 @@
-package org.earelin.tenda.commons;
+package org.earelin.tenda.catalog.domain;
 
 import java.util.HashMap;
 import java.util.Map;
