@@ -31,11 +31,13 @@ tasks.withType<Test> {
 
 tasks.withType<BootBuildImage> {
     imageName.set("org.earelin.oci/tenda/${project.name}:${project.version}")
+    tags.set(listOf("latest"))
 }
 
 tasks.test {
     finalizedBy(tasks.jacocoTestReport)
 }
+
 tasks.jacocoTestReport {
     dependsOn(tasks.test)
 }

@@ -7,7 +7,6 @@ plugins {
 }
 
 group = "org.earelin.tenda"
-version = "0.0.1"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
@@ -25,6 +24,7 @@ dependencies {
 
 tasks.withType<BootBuildImage> {
     imageName.set("org.earelin.oci/tenda/${project.name}:${project.version}")
+    tags.set(listOf("latest"))
 }
 
 tasks.withType<Test> {
