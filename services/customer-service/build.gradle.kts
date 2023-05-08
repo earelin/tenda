@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
+
 plugins {
     java
     id("org.springframework.boot") version "3.0.6"
@@ -19,6 +21,10 @@ dependencies {
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
+}
+
+tasks.withType<BootBuildImage> {
+    imageName.set("org.earelin.oci/tenda/${project.name}:${project.version}")
 }
 
 tasks.withType<Test> {

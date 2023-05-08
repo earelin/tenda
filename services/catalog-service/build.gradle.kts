@@ -1,3 +1,5 @@
+import org.springframework.boot.gradle.tasks.bundling.BootBuildImage
+
 plugins {
     jacoco
     java
@@ -25,6 +27,10 @@ dependencies {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+tasks.withType<BootBuildImage> {
+    imageName.set("org.earelin.oci/tenda/${project.name}:${project.version}")
 }
 
 tasks.test {
