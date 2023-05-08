@@ -67,6 +67,18 @@ class CategoryTest {
     }
 
     @Test
+    void should_not_be_equal_to_different_class() {
+        assertThat(category.equals(CATEGORY_NAME))
+                .isFalse();
+    }
+
+    @Test
+    void should_not_be_equal_to_null() {
+        assertThat(category.equals(null))
+                .isFalse();
+    }
+
+    @Test
     void should_have_same_hascode_with_same_id() {
         Category category = new Category(CATEGORY_ID, new StringI18n("Furniture"));
 

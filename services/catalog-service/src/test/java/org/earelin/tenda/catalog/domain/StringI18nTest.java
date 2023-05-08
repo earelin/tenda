@@ -58,8 +58,20 @@ class StringI18nTest {
     }
 
     @Test
+    void should_not_be_equal_to_a_different_class() {
+        assertThat(stringI18n.equals(new String(DEFAUL_STRING)))
+                .isFalse();
+    }
+
+    @Test
     void should_have_equal_hashcode_with_same_default_string() {
         assertThat(stringI18n.hashCode())
                 .isEqualTo(new StringI18n(DEFAUL_STRING).hashCode());
+    }
+
+    @Test
+    void should_return_defaultString_when_converted_to_string() {
+        assertThat(stringI18n.toString())
+                .isEqualTo(DEFAUL_STRING);
     }
 }
