@@ -32,6 +32,20 @@ public class StringI18n {
         return translations.get(language);
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof StringI18n) {
+            return defaultString.equals(((StringI18n) obj).defaultString);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return defaultString.hashCode();
+    }
+
+    @Override
     public String toString() {
         return defaultString;
     }
