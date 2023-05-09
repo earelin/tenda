@@ -30,8 +30,8 @@ tasks.withType<Test> {
 }
 
 tasks.withType<BootBuildImage> {
-    imageName.set("org.earelin.oci/tenda/${project.name}:${project.version}")
-    tags.set(listOf("latest"))
+    imageName.set("oci.earelin.org/tenda/${project.name}")
+    tags.set(listOf("oci.earelin.org/tenda/${project.name}:${project.version}"))
 }
 
 tasks.test {

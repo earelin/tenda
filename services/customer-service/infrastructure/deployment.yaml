@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: customer-service
+  name: customer-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: customer-service
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: customer-service
+    spec:
+      containers:
+      - image: oci.earelin.org/tenda/customer-service:latest
+        name: customer-service
+        resources: {}
+        imagePullPolicy: Never
+status: {}

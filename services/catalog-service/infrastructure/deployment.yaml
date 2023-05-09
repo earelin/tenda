@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: catalog-service
+  name: catalog-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: catalog-service
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: catalog-service
+    spec:
+      containers:
+      - image: oci.earelin.org/tenda/catalog-service:latest
+        name: catalog-service
+        resources: {}
+        imagePullPolicy: Never
+status: {}
