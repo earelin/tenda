@@ -9,7 +9,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 class StringI18nTest {
 
-    private static final String DEFAUL_STRING = "default";
+    static final String DEFAUL_STRING = "default";
 
     StringI18n stringI18n;
 
