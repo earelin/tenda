@@ -8,6 +8,6 @@ flowchart TD
     A[REST Interface] -->|command| B[Kafka]
     B --> D[Event DB]
     A -->|query - HTTP| C[Microservices]
-    B -->|event - subscription| C
-    C -->|event - publish| B
+    B -->|subscription| C
+    C -->|publish| B
 ```
