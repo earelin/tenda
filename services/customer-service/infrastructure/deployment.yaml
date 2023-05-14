@@ -20,4 +20,3 @@ spec:
         name: customer-service
         resources: {}
         imagePullPolicy: Never
-status: {}
