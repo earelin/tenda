@@ -4,25 +4,18 @@ plugins {
     id("io.spring.dependency-management") version "1.1.0"
 }
 
-group = "com.example"
-version = "0.0.1-SNAPSHOT"
+group = "org.earelin.tenda"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
 }
 
-extra["springCloudVersion"] = "2022.0.2"
-
 dependencies {
-    implementation("org.springframework.cloud:spring-cloud-starter-gateway")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-}
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
 
-dependencyManagement {
-    imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
-    }
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("io.projectreactor:reactor-test")
 }
 
 tasks.withType<Test> {
