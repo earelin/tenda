@@ -5,11 +5,13 @@ Internet commerce site demo
 ```mermaid
 flowchart TD
     subgraph Microservices
-        direction TB 
+        direction LR 
         MA[Order] 
         MB[Catalog]
         MC[Warehouse]
         MD[Customer]
+        ME[Checkout]
+        MF[Delivery]
     end
     A[API Gateway] -->|command| B[Kafka]
     B --> D[Event DB]
