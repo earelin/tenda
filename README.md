@@ -6,7 +6,7 @@ Internet commerce site demo
 flowchart TD 
     A[API Gateway] -->|command| B[Kafka]
     B --> D[Event DB]
-    A -->|query - HTTP| C[Microservices]
+    A -->|query - gRPC| C[Microservices]
     B -->|subscription| C
     C -->|publish| B
     E[Application] -->|REST| A
