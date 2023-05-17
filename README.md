@@ -3,11 +3,18 @@
 Internet commerce site demo
 
 ```mermaid
-flowchart TD 
+flowchart TD
+    subgraph Microservices
+        direction TB 
+        MA[Order] 
+        MB[Catalog]
+        MC[Warehouse]
+        MD[Customer]
+    end
     A[API Gateway] -->|command| B[Kafka]
     B --> D[Event DB]
-    A -->|query - gRPC| C[Microservices]
-    B -->|subscription| C
-    C -->|publish| B
+    A -->|query - gRPC| Microservices
+    B -->|subscription| Microservices
+    Microservices -->|publish| B
     E[Application] -->|REST| A
 ```
