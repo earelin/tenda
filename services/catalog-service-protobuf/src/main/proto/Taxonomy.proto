@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package org.earelin.tenda.catalog.grpc;
+
+option java_multiple_files = true;
+
+message CategoryDto {
+  string id = 1;
+  string name = 2;
+  string parent_id = 3;
+}
+
+message GetCategoryRequest {
+  string id = 1;
+}
+
+message CreateCategoryRequest {
+  string name = 1;
+  optional string parent_id = 2;
+}
+
+service CategoryService {
+  rpc GetCategory(GetCategoryRequest) returns (CategoryDto) {}
+  rpc CreateCategory(CreateCategoryRequest) returns (CategoryDto) {}
+}
+
+message TagDto {
+  string id = 1;
+  string name = 2;
+}
+
+message GetTagRequest {
+  string id = 1;
+}
+
+message CreateTagRequest {
+  string name = 1;
+}
+
+service TagService {
+  rpc GetTag(GetTagRequest) returns (TagDto) {}
+  rpc CreateTag(CreateTagRequest) returns (TagDto) {}
+}
