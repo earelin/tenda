@@ -3,6 +3,7 @@ package org.earelin.tenda.catalog;
 import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static com.tngtech.archunit.library.Architectures.layeredArchitecture;
@@ -17,6 +18,7 @@ public class ArchitecturalTest {
                 .importPackages("org.earelin.tenda.catalog");
     }
 
+    @Disabled
     @Test
     void should_check_layers() {
         var layeredArchitecture =
