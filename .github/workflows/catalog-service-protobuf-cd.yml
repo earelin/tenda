@@ -21,6 +21,12 @@ jobs:
         java-version: 17
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
+    - name: Properties
+      run: |
+        echo "Github actor: $GITHUB_ACTOR"
+        echo "Github token: $GITHUB_TOKEN"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Publish library
       run: ./gradlew publish
       env:
