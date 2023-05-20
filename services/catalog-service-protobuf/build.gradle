@@ -40,8 +40,10 @@ publishing {
             name = "GitHubPackages"
             url = "https://maven.pkg.github.com/earelin/tenda"
             credentials {
-                username = project.findProperty("gpr.user") ?: System.getProperty("GITHUB_ACTOR")
-                password = project.findProperty("gpr.password") ?: System.getProperty("GITHUB_TOKEN")
+                credentials {
+                    username = System.getenv("GITHUB_ACTOR")
+                    password = System.getenv("GITHUB_TOKEN")
+                }
             }
         }
     }
