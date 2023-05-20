@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
-    id 'com.google.protobuf' version "0.9.3"
+    id 'com.google.protobuf' version '0.9.3'
+    id 'maven-publish'
 }
 
 group = 'org.earelin.tenda'
@@ -29,6 +30,24 @@ protobuf {
     generateProtoTasks {
         all()*.plugins {
             grpc {}
+        }
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/earelin/tenda"
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+    }
+    publications {
+        gpr(MavenPublication) {
+            from(components.java)
         }
     }
 }
