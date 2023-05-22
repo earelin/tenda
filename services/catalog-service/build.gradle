@@ -11,14 +11,7 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 repositories {
     mavenCentral()
     maven {
-        name = "GitHubPackages"
         url = uri("https://maven.pkg.github.com/earelin/tenda")
-        credentials {
-            credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
-            }
-        }
     }
 }
 
@@ -31,11 +24,13 @@ dependencies {
 
     implementation "org.javamoney:moneta:1.4.2"
 
+    implementation "org.earelin.tenda:catalog-service-protobuf:1.0.12"
+
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation "com.tngtech.archunit:archunit-junit5:1.0.1"
 }
 
-tasks.named("bootBuildImage") {
+bootBuildImage {
     imageName = "oci.earelin.org/tenda/${project.name}"
     tags = ["oci.earelin.org/tenda/${project.name}:${project.version}"]
 }
